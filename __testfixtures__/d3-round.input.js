@@ -1,17 +1,17 @@
 import Chart from './chart';
 import {ensureZero, ensureZeroEqual} from '../tools/domain';
 
-export default class BarClass extends Chart {
+export default class Chart {
     getDomain (graphs) {
         var domain = [
             d3.min(graphs, function (graph) {
                 return d3.min(graph.data, function (item) {
-                    return item.x;
+                    return d3.round(item.x, 2);
                 });
             }),
             d3.max(graphs, function (graph) {
                 return d3.max(graph.data, function (item) {
-                    return item.x;
+                    return d3.round(item.x, 3);
                 });
             })
         ];
@@ -21,14 +21,5 @@ export default class BarClass extends Chart {
         ensureZero(domain);
 
         return domain;
-    }
-
-    sumSomething (something) {
-        // comment
-        return d3.sum(something);
-    }
-
-    createNumberArray (len) {
-        return d3.range(0, len);
     }
 }

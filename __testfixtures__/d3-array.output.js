@@ -1,6 +1,6 @@
 import Chart from './chart';
 import {ensureZero, ensureZeroEqual} from '../tools/domain';
-import { min, max } from 'd3-array';
+import { min, max, sum, range } from 'd3-array';
 
 export default class BarClass extends Chart {
     getDomain (graphs) {
@@ -23,5 +23,13 @@ export default class BarClass extends Chart {
 
         return domain;
     }
-}
 
+    sumSomething (something) {
+        // comment
+        return sum(something);
+    }
+
+    createNumberArray (len) {
+        return range(0, len);
+    }
+}

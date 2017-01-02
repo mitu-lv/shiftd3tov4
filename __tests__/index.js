@@ -18,8 +18,12 @@
 'use strict';
 
 jest.autoMockOff();
-// const defineTest = require('jscodeshift/dist/testUtils').defineTest;
 
 import {defineTest} from 'jscodeshift/dist/testUtils';
 
 defineTest(__dirname, 'd3-array');
+defineTest(__dirname, 'd3-scale');
+defineTest(__dirname, 'd3-round');
+defineTest(__dirname, 'd3-interpolate');
+defineTest(__dirname, 'd3-dispatch');
+defineTest(__dirname, 'd3-scale-category');
