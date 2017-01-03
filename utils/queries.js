@@ -1,5 +1,6 @@
-export function createObjectCallExpr(objectExprStr) {
-    const exprParts = objectExprStr.split('.');
+export function createObjectCallExpr(objectExprStr, type) {
+    const exprParts = objectExprStr.split('.'),
+          partCount = exprParts.length;
 
     exprParts.reverse();
 
@@ -11,15 +12,27 @@ export function createObjectCallExpr(objectExprStr) {
     //         property: { type: 'Identifier', name: 'max' },
     //     }
     // }
+    let out = {};
+    let queryRef;
 
-    const out = {
-              callee: {}
-          },
-          partCount = exprParts.length;
+    switch (type) {
+        case 'CallExpression':
+            exprParts[0] = exprParts[0].substr(0, exprParts[0].indexOf('('))
+            queryRef = out.callee = {};
+        break;
+        case 'MemberExpression':
+            queryRef = out;
+        break;
+        case 'Identifier':
+            queryRef = out;
+        break;
+        default:
+            throw new Exception('Invalid type given.');
+    }
 
     let count = 1;
 
-    console.log('exprParts', exprParts);
+    // console.log('exprParts', exprParts);
 
     exprParts.reduce((acc, pt) => {
         if (count === partCount) {
@@ -45,9 +58,13 @@ export function createObjectCallExpr(objectExprStr) {
         count++;
 
         return acc.type === 'CallExpression' ? acc.callee.object : acc.object;
-    }, out.callee);
+    }, queryRef);
 
-    console.log(JSON.stringify(out));
+    // console.log(JSON.stringify(out));
 
     return out;
+}
+
+export function createObjectPropertyGetter(objectExprStr) {
+
 }

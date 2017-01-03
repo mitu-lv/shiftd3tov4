@@ -3,10 +3,12 @@ import {nsCall} from './transforms';
 const convert = {
           source: 'd3-array',
           convertables: {
-              'd3.min': 'min',
-              'd3.max': 'max',
-              'd3.sum': 'sum',
-              'd3.range': 'range'
+              'd3.min()': 'min()',
+              'd3.max()': 'max()',
+              'd3.sum()': 'sum()',
+              'd3.range()': 'range()',
+              'd3.ascending()': 'ascending()',
+              'd3.descending()': 'descending()'
           }
       };
 

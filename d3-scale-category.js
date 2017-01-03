@@ -3,7 +3,7 @@ import {nsCall} from './transforms';
 const convert = {
           source: 'd3',
           convertables: {
-              'd3.scale.category20().range': 'schemeCategory20'
+              'd3.scale.category20().range()': 'schemeCategory20'
           }
       };
 

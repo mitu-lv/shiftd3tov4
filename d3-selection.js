@@ -1,10 +1,10 @@
 import {nsCall} from './transforms';
 
 const convert = {
-          source: 'd3-scale',
+          source: 'd3-selection',
           convertables: {
-              'd3.scale.linear()': 'scaleLinear()',
-              'd3.scale.ordinal()': 'scaleOrdinal()'
+              'd3.select()': 'select()',
+              'd3.event': 'event'
           }
       };
 

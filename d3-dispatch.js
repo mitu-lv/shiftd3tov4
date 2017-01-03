@@ -3,7 +3,7 @@ import {nsCall} from './transforms';
 const convert = {
           source: 'd3-dispatch',
           convertables: {
-              'd3.dispatch': { 'dispatch': 'd3dispatch' }
+              'd3.dispatch()': { 'dispatch': 'd3dispatch()' }
           }
       };
 

@@ -31,4 +31,12 @@ export default class BarClass extends Chart {
     createNumberArray (len) {
         return d3.range(0, len);
     }
+
+    asc (a, b) {
+        return d3.descending(a.size, b.size);
+    }
+
+    desc (a, b) {
+        return d3.ascending(a.size, b.size);
+    }
 }

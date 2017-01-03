@@ -27,3 +27,5 @@ defineTest(__dirname, 'd3-round');
 defineTest(__dirname, 'd3-interpolate');
 defineTest(__dirname, 'd3-dispatch');
 defineTest(__dirname, 'd3-scale-category');
+defineTest(__dirname, 'd3-selection');
+defineTest(__dirname, 'd3-empty');

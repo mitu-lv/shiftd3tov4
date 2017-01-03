@@ -3,7 +3,7 @@ import {nsCall} from './transforms';
 const convert = {
           source: 'd3-interpolate',
           convertables: {
-              'd3.interpolate': 'interpolate',
+              'd3.interpolate()': 'interpolate()',
           }
       };
 

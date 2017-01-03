@@ -3,7 +3,7 @@ import {nsCall} from './transforms';
 const convert = {
           source: '../math',
           convertables: {
-              'd3.round': 'math.round'
+              'd3.round()': 'math.round()'
           }
       };
 
