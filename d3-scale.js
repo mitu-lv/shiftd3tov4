@@ -4,7 +4,8 @@ const convert = {
           source: 'd3-scale',
           convertables: {
               'd3.scale.linear()': 'scaleLinear()',
-              'd3.scale.ordinal()': 'scaleOrdinal()'
+              'd3.scale.ordinal()': 'scaleOrdinal()',
+              'd3.scale.sqrt()': 'scaleSqrt()'
           }
       };
 

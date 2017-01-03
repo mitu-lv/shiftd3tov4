@@ -4,7 +4,8 @@ const convert = {
           source: 'd3-selection',
           convertables: {
               'd3.select()': 'select()',
-              'd3.event': 'event'
+              'd3.event': 'event',
+              'd3.mouse()': 'mouse()'
           }
       };
 
